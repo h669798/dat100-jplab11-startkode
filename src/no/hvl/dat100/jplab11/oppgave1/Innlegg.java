@@ -4,68 +4,116 @@ import no.hvl.dat100.jplab11.common.TODO;
 
 public abstract class Innlegg {
 	
-	// TODO - deklarering av objektvariable
+	// Deklarering av objektvariabler:
+	
+	private int id;
+	private String bruker;
+	private String dato;
+	private int likes;
+	
+	//
 	
 	public Innlegg() {
 		
 	}
+
+	// To konstruktører som initialiserer objektvariablene:
 	
 	public Innlegg(int id, String bruker, String dato) {
 
-		// TODO 
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+		this.id = id;
+		this.bruker = bruker;
+		this.dato = dato;
+		likes = 0;
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
 
-		// TODO - START
-		
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+		this.id = id;
+		this.bruker = bruker;
+		this.dato = dato;
+		this.likes = likes;
 	}
+	
+	/* Implementerer Get-metoder som returnerer verdien på objektvariabelene.
+	 * Implementerer også Set-metoder som setter verdi på objektvariabelene.*/
 	
 	public String getBruker() {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		return bruker;
 
 	}
 
 	public void setBruker(String bruker) {
-		throw new UnsupportedOperationException(TODO.method());
+		
+		this.bruker = bruker;
+		
 	}
 
 	public String getDato() {
-		throw new UnsupportedOperationException(TODO.method());
+		
+		return dato;
 		
 	}
 
 	public void setDato(String dato) {
-		throw new UnsupportedOperationException(TODO.method());
+		
+		this.dato = dato;
+		
 	}
 
 	public int getId() {
-		throw new UnsupportedOperationException(TODO.method());
+		
+		return id;
+
+	}
+	
+    public void setId(int id) {
+		
+		this.id = id;
+		
+	}
+    
+    public int getLikes() {
+		
+		return likes;
 
 	}
 
-	public int getLikes() {
-		throw new UnsupportedOperationException(TODO.method());
 
-	}
+    // Øker antall likes for innlegget med 1:
 	
 	public void doLike () {
-		throw new UnsupportedOperationException(TODO.method());
+		
+		likes += 1;
+		
 	}
+	
+	// Returnerer true hvis innlegget har samme id gitt som parameter:
 	
 	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
-
+		
+		if(innlegg.getId() == this.id) {
+			
+			return true;
+			
+		}
+		
+		else {
+		
+			return false;
+			
+		}
+		
 	}
 	
-	@Override
+	// Implementerer en tekststreng med alle variablene:
+	
 	public String toString() {
 		
-		throw new UnsupportedOperationException(TODO.method());
+		String tekst = id + "\n" + bruker + "\n" + dato + "\n" + likes + "\n";
 				
+		return tekst;
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6
